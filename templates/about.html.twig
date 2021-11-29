@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <title>Image classifier (Intel dataset) - by Charbel KINDJI</title>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">What's this?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container mx-auto">
+    <div class="row">
+        <h1>About</h1>
+        <div id="gif-container" class="col-12 ">
+            <img class="img-fluid img-responsive" style="margin-top:10px;" src="{{ url_for('static', filename='images/about.gif') }}" >
+        </div>
+    </div>
+    <div class="">
+
+        <p>
+            <br>
+            Hello adventurer! My name is <a href="https://www.linkedin.com/in/gaspard-kindji/"><strong>Charbel KINDJI</strong></a>.<br><br>
+            This is a personal project based on <strong>computer vision</strong> ; it's an image classifier.
+            The model was trained on a dataset containing 24K images of natural scenes around the world.
+            Each associated with its class:
+
+            <ul>
+                <li>buildings;</li>
+                <li>forest;</li>
+                <li>glacier;</li>
+                <li>mountain;</li>
+                <li>sea;</li>
+                <li>street.</li>
+            </ul>
+        </p>
+
+        <p>
+            So, just upload an image and the model will classify it for you in one of these classes.
+        </p>
+        <p>
+            Here are some useful links: <br>
+            The dataset : <a href="https://www.kaggle.com/puneet6060/intel-image-classification">https://www.kaggle.com/puneet6060/intel-image-classification</a> <br>
+            The Kaggle notebook for training the model: <br>
+            The source code of this website: <br>
+            My LinkedIn profile: <a href="https://www.linkedin.com/in/gaspard-kindji/">https://www.linkedin.com/in/gaspard-kindji/</a> <br>
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+
+
+    </div>
+
+    <div class="row">
+        <p>
+            Feel free to give me feedback directly.
+        </p>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
