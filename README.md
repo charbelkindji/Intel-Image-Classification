@@ -15,7 +15,7 @@ This is a flask app for the deployment of a deep learning model trained to class
 
 ## Demo
 
-The project is currently being deployed on the Heroku platform (work in progress). It's happening [here](#).
+The project is currently being deployed on the Heroku platform (work in progress). It's happening [here](https://whatsthisimageabout.herokuapp.com).
 
 ## Run locally
 
