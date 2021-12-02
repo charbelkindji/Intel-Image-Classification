@@ -7,7 +7,7 @@ from tensorflow import keras
 import PIL
 from PIL import Image
 
-app = Flask(__name__)
+app = Flask('app')
 
 # Globals
 IMG_SIZE = (128, 128)
