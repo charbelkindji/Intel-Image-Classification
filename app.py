@@ -4,16 +4,20 @@ from werkzeug.utils import secure_filename
 import cv2
 import numpy as np
 from tensorflow import keras
+
 app = Flask(__name__)
+import PIL
+from PIL import Image
 
 # Globals
-IMG_SIZE = (128,128)
+IMG_SIZE = (128, 128)
 CATEGORIES = {'buildings': 0,
               'forest': 1,
               'glacier': 2,
               'mountain': 3,
               'sea': 4,
-              'street': 5 }
+              'street': 5}
+
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
@@ -42,9 +46,9 @@ def homepage():
 
         # Display result
         return render_template('index.html.twig',
-                               predictedLabel = predictedLabel,
-                               confidence = confidence, # two decimal places
-                                image_name = img_name)
+                               predictedLabel=predictedLabel,
+                               confidence=confidence,  # two decimal places
+                               image_name=img_name)
 
 
 @app.route('/about', methods=['GET'])
@@ -62,13 +66,22 @@ def upload_file():
 
     # Get the file from post request
     file = request.files['imageToPredict']
+    # print(type(file))
+
+    # Resize uploaded image
+    fixed_height = 512
+    image = Image.open(file)
+    # print(image.size)
+    height_percent = (fixed_height / float(image.size[1]))
+    width_size = int((float(image.size[0]) * float(height_percent)))
+    image = image.resize((width_size, fixed_height), PIL.Image.NEAREST)
 
     # Save the file to static/images/uploads
     file_path = os.path.join('static/images/uploads/', secure_filename(file.filename))
-
-    file.save(file_path)
+    image.save(file_path)
 
     return file_path
+
 
 def preprocess_image(image_path):
     """
@@ -97,10 +110,11 @@ def preprocess_image(image_path):
     img = np.array(img)
 
     # Scale
-    img = img/255
+    img = img / 255
 
     # Return processsed image
     return img
+
 
 def predict(image):
     """
