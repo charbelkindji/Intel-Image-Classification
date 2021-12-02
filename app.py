@@ -4,10 +4,10 @@ from werkzeug.utils import secure_filename
 import cv2
 import numpy as np
 from tensorflow import keras
-
-app = Flask(__name__)
 import PIL
 from PIL import Image
+
+app = Flask(__name__)
 
 # Globals
 IMG_SIZE = (128, 128)
